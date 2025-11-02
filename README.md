@@ -1,2 +1,2 @@
-# odin-rps
-rock paper scissors
+# Project: Rock Paper Scissors
+From Foundations course in The Odin Project
