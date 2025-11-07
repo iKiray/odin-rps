@@ -1,9 +1,8 @@
-//random number generator 1-10 to determine rock,paper,or scissor
-const ranNum = Math.random() * 10;
-const fixNum = ranNum.toFixed(0);
-const parseNum = parseFloat(fixNum);
-
 function getComputerChoice() {
+    let ranNum = Math.random() * 10;
+    let fixNum = ranNum.toFixed(0);
+    let parseNum = parseFloat(fixNum);
+
     if (parseNum <= 3) {
         return "rock";
     } else if (parseNum > 3 && parseNum <= 6) {
@@ -52,3 +51,11 @@ function playGame() {
 playGame();
 console.log("your score: " + humanScore);
 console.log("computer score: " + computerScore);
+
+if (humanScore == computerScore) {
+    console.log("You and the computer drew the game");
+} else if (humanScore > computerScore) {
+    console.log("You won the game!");
+} else {
+    console.log("You lost the game!")
+}
