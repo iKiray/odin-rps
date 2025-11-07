@@ -1,3 +1,4 @@
+//random number generator 1-10 to determine rock,paper,or scissor
 const ranNum = Math.random() * 10;
 const fixNum = ranNum.toFixed(0);
 const parseNum = parseFloat(fixNum);
@@ -15,7 +16,6 @@ function getComputerChoice() {
     }
 }
 
-
 function getHumanChoice() {
     let choice = prompt("Enter: rock, paper, or scissor");
     let fixedChoice = choice.toLowerCase();
@@ -29,15 +29,15 @@ function getHumanChoice() {
     }
 }
 
-
-
 function playRound(humanChoice, computerChoice) {
     if ((humanChoice == "rock" && computerChoice == "rock") || (humanChoice == "paper" && computerChoice == "paper") || (humanChoice == "scissor" && computerChoice == "scissor")) {
         console.log("Draw!");
     } else if ((humanChoice == "rock" && computerChoice == "scissor") || (humanChoice == "paper" && computerChoice == "rock") || (humanChoice == "scissor" && computerChoice == "paper")) {
         console.log("You win! " + humanChoice + " beats " + computerChoice);
+        humanScore++;
     } else {
         console.log("You lose! " + computerChoice + " beats " + humanChoice);
+        computerScore++;
     }
 }
 
@@ -47,3 +47,5 @@ const computerSelection = getComputerChoice();
 playRound(humanSelection, computerSelection);
 
 console.log("computer choice: " + getComputerChoice());
+console.log("your score: " + humanScore);
+console.log("computer score: " + computerScore);
