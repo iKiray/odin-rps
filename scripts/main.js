@@ -15,7 +15,6 @@ function getComputerChoice() {
     }
 }
 
-console.log("computer choice: " + getComputerChoice());
 
 function getHumanChoice() {
     let choice = prompt("Enter: rock, paper, or scissor");
@@ -30,9 +29,21 @@ function getHumanChoice() {
     }
 }
 
-console.log("your choice: " + getHumanChoice());
-/*
+
+
 function playRound(humanChoice, computerChoice) {
-    
+    if ((humanChoice == "rock" && computerChoice == "rock") || (humanChoice == "paper" && computerChoice == "paper") || (humanChoice == "scissor" && computerChoice == "scissor")) {
+        console.log("Draw!");
+    } else if ((humanChoice == "rock" && computerChoice == "scissor") || (humanChoice == "paper" && computerChoice == "rock") || (humanChoice == "scissor" && computerChoice == "paper")) {
+        console.log("You win! " + humanChoice + " beats " + computerChoice);
+    } else {
+        console.log("You lose! " + computerChoice + " beats " + humanChoice);
+    }
 }
-*/
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
+
+console.log("computer choice: " + getComputerChoice());
